@@ -10,13 +10,13 @@ import (
 	"github.com/giantswarm/schemadocs/pkg/generate"
 )
 
-func (r *Readme) Validate(schemaPath string, layout string) error {
+func (r *Readme) Validate(schemaPath string, layout string, otherSectionTop bool) error {
 	docsFromReadme, err := r.Docs()
 	if err != nil {
 		return fmt.Errorf("failed to read docs from readme: %w", err)
 	}
 
-	docsFromSchema, err := generate.Generate(schemaPath, layout)
+	docsFromSchema, err := generate.Generate(schemaPath, layout, otherSectionTop)
 	if err != nil {
 		return fmt.Errorf("failed to generate docs from schema: %w", err)
 	}
