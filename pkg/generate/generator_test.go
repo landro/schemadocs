@@ -9,7 +9,7 @@ import (
 
 	"github.com/google/go-cmp/cmp"
 
-	pkgerror "github.com/giantswarm/schemadocs/pkg/error"
+	pkgerror "github.com/landro/schemadocs/pkg/error"
 )
 
 var (

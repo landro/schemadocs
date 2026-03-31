@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	pkgerror "github.com/giantswarm/schemadocs/pkg/error"
+	pkgerror "github.com/landro/schemadocs/pkg/error"
 )
 
 const (

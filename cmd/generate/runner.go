@@ -6,11 +6,11 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/giantswarm/schemadocs/cmd/global"
-	"github.com/giantswarm/schemadocs/pkg/cli"
-	cmderror "github.com/giantswarm/schemadocs/pkg/error"
-	"github.com/giantswarm/schemadocs/pkg/generate"
-	"github.com/giantswarm/schemadocs/pkg/readme"
+	"github.com/landro/schemadocs/cmd/global"
+	"github.com/landro/schemadocs/pkg/cli"
+	cmderror "github.com/landro/schemadocs/pkg/error"
+	"github.com/landro/schemadocs/pkg/generate"
+	"github.com/landro/schemadocs/pkg/readme"
 )
 
 type runner struct {

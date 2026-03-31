@@ -15,9 +15,9 @@ import (
 
 	"github.com/santhosh-tekuri/jsonschema/v6"
 
-	pkgerror "github.com/giantswarm/schemadocs/pkg/error"
-	"github.com/giantswarm/schemadocs/pkg/generate/templates"
-	"github.com/giantswarm/schemadocs/pkg/key"
+	pkgerror "github.com/landro/schemadocs/pkg/error"
+	"github.com/landro/schemadocs/pkg/generate/templates"
+	"github.com/landro/schemadocs/pkg/key"
 )
 
 // UniversalLoader implements jsonschema.URLLoader for both HTTP/HTTPS and file URLs

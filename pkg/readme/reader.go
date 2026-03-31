@@ -5,7 +5,7 @@ import (
 	"os"
 	"strings"
 
-	pkgerror "github.com/giantswarm/schemadocs/pkg/error"
+	pkgerror "github.com/landro/schemadocs/pkg/error"
 )
 
 func (r *Readme) Content() (string, error) {

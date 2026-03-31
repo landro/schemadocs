@@ -10,7 +10,7 @@ import (
 
 	"github.com/google/go-cmp/cmp"
 
-	cmderror "github.com/giantswarm/schemadocs/pkg/error"
+	cmderror "github.com/landro/schemadocs/pkg/error"
 )
 
 func Test_Root(t *testing.T) {

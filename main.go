@@ -6,7 +6,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/giantswarm/schemadocs/cmd"
+	"github.com/landro/schemadocs/cmd"
 )
 
 func main() {

@@ -7,10 +7,10 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/giantswarm/schemadocs/cmd/generate"
-	"github.com/giantswarm/schemadocs/cmd/global"
-	"github.com/giantswarm/schemadocs/cmd/validate"
-	"github.com/giantswarm/schemadocs/pkg/project"
+	"github.com/landro/schemadocs/cmd/generate"
+	"github.com/landro/schemadocs/cmd/global"
+	"github.com/landro/schemadocs/cmd/validate"
+	"github.com/landro/schemadocs/pkg/project"
 )
 
 const (

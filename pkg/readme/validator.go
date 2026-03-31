@@ -6,8 +6,8 @@ import (
 
 	"github.com/google/go-cmp/cmp"
 
-	pkgerror "github.com/giantswarm/schemadocs/pkg/error"
-	"github.com/giantswarm/schemadocs/pkg/generate"
+	pkgerror "github.com/landro/schemadocs/pkg/error"
+	"github.com/landro/schemadocs/pkg/generate"
 )
 
 func (r *Readme) Validate(schemaPath string, layout string, otherSectionTop bool) error {

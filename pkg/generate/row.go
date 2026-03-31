@@ -10,7 +10,7 @@ import (
 
 	"github.com/santhosh-tekuri/jsonschema/v6"
 
-	"github.com/giantswarm/schemadocs/pkg/key"
+	"github.com/landro/schemadocs/pkg/key"
 )
 
 type Row struct {

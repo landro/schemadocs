@@ -5,7 +5,7 @@ import (
 	"path"
 	"testing"
 
-	pkgerror "github.com/giantswarm/schemadocs/pkg/error"
+	pkgerror "github.com/landro/schemadocs/pkg/error"
 )
 
 func Test_Write(t *testing.T) {

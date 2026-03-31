@@ -5,7 +5,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	cmderror "github.com/giantswarm/schemadocs/pkg/error"
+	cmderror "github.com/landro/schemadocs/pkg/error"
 )
 
 const (
