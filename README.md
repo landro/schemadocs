@@ -140,6 +140,20 @@ Use `--help` to learn about more options.
 
 The default output format is a tabular layout, as shown in the example above. The `--layout linear` flag allows to chose a linear output style.
 
+#### Other section position
+
+By default, the `Other` section (containing top-level primitive properties that don't belong to a named sub-object) is rendered at the **bottom** of the generated documentation. Use `--other-section-top` to place it at the **top** instead.
+
+```nohighlight
+schemadocs generate schema.json --other-section-top
+```
+
+The same flag is available on the `validate` command and must match the flag used during generation.
+
+```nohighlight
+schemadocs validate README.md --schema schema.json --other-section-top
+```
+
 ### Validation
 
 The `validate` command allows to verify in a CI/CD pipeline whether the schema documentation in the given markdown file is up-to-date.

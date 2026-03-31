@@ -52,7 +52,7 @@ func Test_Generator(t *testing.T) {
 
 	for _, tc := range testCases {
 		t.Run(tc.name, func(t *testing.T) {
-			docs, err := Generate("testdata/"+tc.schemaPath, tc.layout)
+			docs, err := Generate("testdata/"+tc.schemaPath, tc.layout, false)
 
 			if err != nil {
 				if err != tc.expectedErr && !errors.Is(err, tc.expectedErr) {

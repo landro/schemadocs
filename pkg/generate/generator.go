@@ -78,7 +78,7 @@ func (u UniversalLoader) Load(urlStr string) (any, error) {
 	return jsonData, nil
 }
 
-func Generate(schemaPath string, layout string) (string, error) {
+func Generate(schemaPath string, layout string, otherSectionTop bool) (string, error) {
 	compiler := jsonschema.NewCompiler()
 
 	// Add universal loader for both HTTP/HTTPS and file URLs
@@ -90,11 +90,11 @@ func Generate(schemaPath string, layout string) (string, error) {
 		return "", fmt.Errorf("%s: %w", err.Error(), pkgerror.ErrInvalidSchemaFile)
 	}
 
-	sections := sectionsFromSchema(schema, "")
+	sections := sectionsFromSchema(schema, "", otherSectionTop)
 	return toMarkdown(sections, layout)
 }
 
-func sectionsFromSchema(schema *jsonschema.Schema, path string) []Section {
+func sectionsFromSchema(schema *jsonschema.Schema, path string, otherSectionTop bool) []Section {
 	var sections []Section
 	var otherSectionRows []Row
 
@@ -107,7 +107,7 @@ func sectionsFromSchema(schema *jsonschema.Schema, path string) []Section {
 			if key.SchemaIsPrimitive(property) {
 				otherSectionRows = append(otherSectionRows, RowsFromSchema(property, path, name, []string{})...)
 			} else if name == key.GlobalPropertyName {
-				globalSections := sectionsFromSchema(property, key.GlobalPropertyName)
+				globalSections := sectionsFromSchema(property, key.GlobalPropertyName, otherSectionTop)
 				sections = append(sections, globalSections...)
 			} else {
 				sections = append(sections, SectionFromSchema(property, path, name))
@@ -136,7 +136,11 @@ func sectionsFromSchema(schema *jsonschema.Schema, path string) []Section {
 		}
 
 		section := NewSection(otherSectionTitle, otherSectionRows)
-		sections = append(sections, section)
+		if otherSectionTop {
+			sections = append([]Section{section}, sections...)
+		} else {
+			sections = append(sections, section)
+		}
 	}
 
 	return sections

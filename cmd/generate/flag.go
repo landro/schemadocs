@@ -13,6 +13,7 @@ const (
 	flagDocPlaceholderStart = "doc-placeholder-start"
 	flagDocPlaceholderEnd   = "doc-placeholder-end"
 	flagLayout              = "layout"
+	flagOtherSectionTop     = "other-section-top"
 )
 
 type flag struct {
@@ -20,6 +21,7 @@ type flag struct {
 	docPlaceholderStart string
 	docPlaceholderEnd   string
 	layout              string
+	otherSectionTop     bool
 }
 
 func (f *flag) Init(cmd *cobra.Command) {
@@ -27,6 +29,7 @@ func (f *flag) Init(cmd *cobra.Command) {
 	cmd.Flags().StringVar(&f.docPlaceholderStart, flagDocPlaceholderStart, "", "Placeholder string marking the start of the docs section in the output file")
 	cmd.Flags().StringVar(&f.docPlaceholderEnd, flagDocPlaceholderEnd, "", "Placeholder string marking the end of the docs section in the output file")
 	cmd.Flags().StringVarP(&f.layout, flagLayout, "l", "default", "Layout of the generated documentation")
+	cmd.Flags().BoolVar(&f.otherSectionTop, flagOtherSectionTop, false, "Place the 'Other' section at the top instead of the bottom")
 }
 
 func (f *flag) Validate() error {

@@ -46,7 +46,7 @@ func Test_Validate(t *testing.T) {
 		t.Run(tc.name, func(t *testing.T) {
 			readme, err := New(tc.readmeFilePath, tc.startPlaceholder, tc.endPlaceholder)
 			if err == nil {
-				err = readme.Validate(tc.schemaFilePath, tc.layout)
+				err = readme.Validate(tc.schemaFilePath, tc.layout, false)
 			}
 			checkErr(t, err, tc.expectedErr)
 		})
